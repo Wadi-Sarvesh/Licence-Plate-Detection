@@ -13,7 +13,7 @@ from datetime import date
 import  imutils
 
 
-wb=openpyxl.load_workbook("EDI_template.xlsx")
+wb=openpyxl.load_workbook("WorkBook.xlsx")
 s=wb.worksheets[0]
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
@@ -22,7 +22,7 @@ current_date = today.strftime("%d/%m/%Y")
 
 
 # Read the image file
-image = cv2.imread("D:/image to csv project/test images/IMG_to_CSV_pro1_img_test16.jpg")
+image = cv2.imread("Path to vehicle's image")
 
 # Resize the image - change width to 500
 image = imutils.resize(image, width=500)
@@ -110,7 +110,7 @@ cv2.imshow("11 - Enhanced Number Plate",image)
 
 
 
-pytesseract.pytesseract.tesseract_cmd = 'C:/Users/wadis/AppData/Local/Tesseract-OCR/tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = 'path to tesseract installion'
 # write the grayscale image to disk as a temporary file so we can
 # apply OCR to it
 filename = "{}.png".format(os.getpid())
